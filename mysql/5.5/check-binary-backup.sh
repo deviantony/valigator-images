@@ -10,6 +10,7 @@ MYSQLADMIN_OPTS=$3
 
 chown -R mysql:mysql ${MYSQL_DATADIR}
 mysqld --datadir=${MYSQL_DATADIR} ${MYSQL_OPTS} &
+sleep 10
 mysqladmin -u root ${MYSQLADMIN_OPTS} status
 RET=$?
 exit ${RET}
